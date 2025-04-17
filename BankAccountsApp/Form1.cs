@@ -26,12 +26,33 @@ namespace BankAccountsApp
             BankAccountsGrid.DataSource = BankAccounts;
         }
 
+        private void DepositBtn_Click(object sender, EventArgs e)
+        {
+            if (BankAccountsGrid.SelectedRows.Count == 1 && AmountNum.Value > 0)
+            {
+                BankAccount SelectedBankAccount = BankAccountsGrid.SelectedRows[0].DataBoundItem as BankAccount;
 
+                string Message = SelectedBankAccount.Deposit(AmountNum.Value);
+                RefreshGrid();
+                AmountNum.Value = 0;
 
+                MessageBox.Show(Message);
+            }
+        }
 
+        private void WithdrawBtn_Click(object sender, EventArgs e)
+        {
+            if (BankAccountsGrid.SelectedRows.Count == 1 && AmountNum.Value > 0)
+            {
+                BankAccount SelectedBankAccount = BankAccountsGrid.SelectedRows[0].DataBoundItem as BankAccount;
 
+                string Message = SelectedBankAccount.WithDraw(AmountNum.Value);
+                RefreshGrid();
+                AmountNum.Value = 0;
 
-
+                MessageBox.Show(Message);
+            }
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -50,32 +71,6 @@ namespace BankAccountsApp
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void DepositBtn_Click(object sender, EventArgs e)
-        {
-            if (BankAccountsGrid.SelectedRows.Count == 1 && AmountNum.Value > 0)
-            {
-                BankAccount SelectedBankAccount = BankAccountsGrid.SelectedRows[0].DataBoundItem as BankAccount;
-
-                SelectedBankAccount.Balance += AmountNum.Value;
-                RefreshGrid();
-                AmountNum.Value = 0;
-            }
-        }
-
-        private void WithdrawBtn_Click(object sender, EventArgs e)
-        {
-            if(BankAccountsGrid.SelectedRows.Count == 1 && AmountNum.Value > 0)
-            {
-                BankAccount SelectedBankAccount = BankAccountsGrid.SelectedRows[0].DataBoundItem as BankAccount;
-
-                if (AmountNum.Value > SelectedBankAccount.Balance)
-                    return;
-                SelectedBankAccount.Balance -= AmountNum.Value;
-                RefreshGrid();
-                AmountNum.Value = 0;
-            }
         }
     }
 }
