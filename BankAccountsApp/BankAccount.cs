@@ -11,5 +11,12 @@ namespace BankAccountsApp
         public string Owner { get; set; }
         public Guid AccountNumber { get; set; }
         public decimal Balance { get; set; }
+
+        public BankAccount(string Owner)
+        {
+            this.Owner = Owner;
+            this.AccountNumber = Guid.NewGuid();
+            this.Balance = 0;
+        }
     }
 }

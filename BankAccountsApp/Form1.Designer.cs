@@ -67,6 +67,7 @@
             OwnerTxt.Name = "OwnerTxt";
             OwnerTxt.Size = new Size(208, 31);
             OwnerTxt.TabIndex = 2;
+            OwnerTxt.TextChanged += OwnerTxt_TextChanged;
             // 
             // AmountNum
             // 
@@ -83,6 +84,7 @@
             CreateAccountBtn.TabIndex = 6;
             CreateAccountBtn.Text = "Create Acc.";
             CreateAccountBtn.UseVisualStyleBackColor = true;
+            CreateAccountBtn.Click += CreateAccountBtn_Click;
             // 
             // WithdrawBtn
             // 
