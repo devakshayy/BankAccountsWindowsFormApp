@@ -42,7 +42,7 @@ namespace BankAccountsApp
 
         private void WithdrawBtn_Click(object sender, EventArgs e)
         {
-            if (BankAccountsGrid.SelectedRows.Count == 1 && AmountNum.Value > 0)
+            if (BankAccountsGrid.SelectedRows.Count == 1 && AmountNum.Value  > 0)
             {
                 BankAccount SelectedBankAccount = BankAccountsGrid.SelectedRows[0].DataBoundItem as BankAccount;
 
@@ -71,6 +71,10 @@ namespace BankAccountsApp
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void BankAccountsGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

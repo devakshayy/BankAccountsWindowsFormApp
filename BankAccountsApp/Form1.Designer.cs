@@ -117,6 +117,7 @@
             BankAccountsGrid.RowHeadersWidth = 62;
             BankAccountsGrid.Size = new Size(398, 261);
             BankAccountsGrid.TabIndex = 9;
+            BankAccountsGrid.CellContentClick += BankAccountsGrid_CellContentClick;
             // 
             // Form1
             // 
