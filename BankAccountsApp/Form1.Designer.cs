@@ -72,6 +72,8 @@
             // AmountNum
             // 
             AmountNum.Location = new Point(123, 371);
+            AmountNum.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
+            AmountNum.Minimum = new decimal(new int[] { 99999999, 0, 0, int.MinValue });
             AmountNum.Name = "AmountNum";
             AmountNum.Size = new Size(208, 31);
             AmountNum.TabIndex = 4;
@@ -94,6 +96,7 @@
             WithdrawBtn.TabIndex = 7;
             WithdrawBtn.Text = "Withdraw";
             WithdrawBtn.UseVisualStyleBackColor = true;
+            WithdrawBtn.Click += WithdrawBtn_Click;
             // 
             // DepositBtn
             // 
@@ -103,6 +106,7 @@
             DepositBtn.TabIndex = 8;
             DepositBtn.Text = "Deposit";
             DepositBtn.UseVisualStyleBackColor = true;
+            DepositBtn.Click += DepositBtn_Click;
             // 
             // BankAccountsGrid
             // 
